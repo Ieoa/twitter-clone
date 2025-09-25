@@ -6,16 +6,16 @@ Este projeto é um clone simplificado do Twitter, desenvolvido com foco em apren
 
 📦 Tecnologias utilizadas
 
-Node.js
-Express
-MongoDB
-JavaScript
-HTML/CSS
+Node.js,
+Express,
+MongoDB,
+JavaScript,
+HTML/CSS.
 
 🚀 Funcionalidades
 
-Cadastro e login de usuários
-Criação de posts (tweets)
-Visualização de feed
-Curtidas e comentários
-Sistema de autenticação com JWT
+Cadastro e login de usuários,
+Criação de posts (tweets),
+Visualização de feed,
+Curtidas e comentários,
+Sistema de autenticação com JWT.
