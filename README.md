@@ -20,4 +20,3 @@ Criação de posts (tweets),
 Visualização de feed,
 Curtidas e comentários,
 Sistema de autenticação com JWT.
->>>>>>> 4c0b612372e1b794b0dfa2ba2e48966731b11c10
