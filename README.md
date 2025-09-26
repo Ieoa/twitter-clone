@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-# twitter-clone
-=======
+
 # twitter-clone
 
 🐦 Twitter Clone
