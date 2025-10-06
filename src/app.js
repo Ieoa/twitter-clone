@@ -1,19 +1,8 @@
-
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './components/Login';
-import feed from './components/feed';
-function App() {
-    return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<Login />} />
-                <Route path="/feed" element={<Feed />} />
-            </Routes>
-        </Router>
-    );
-}
 const express = require('express');
 const app = express();
+app.get('/feed', (req, res) => {
+    res.sendFile(__dirname + '/public/feed.html');
+});
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');

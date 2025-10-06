@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
+
 
 </html>
 
@@ -11,13 +13,38 @@
     <title>Twitter</title>
 </head>
 
+
 <body>
     <div class="login-box">
+
         <h1>Bem-vindo ao Twitter Clone!</h1>
         <p>Esta é uma versão simplificada do Twitter.</p>
-        <input type="text" placeholder="Usuário">
-        <input type="password" placeholder="Senha">
-        <button>Entrar</button>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Usuário" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+
+        <script>
+            document.getElementById('loginForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+
+                const res = await fetch('/users/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+
+                if (res.ok) {
+                    window.location.href = '/feed';
+                } else {
+                    alert('Usuário ou senha incorretos');
+                }
+            });
+        </script>
 
         <div>
             <span>não tem cadastro ? </span><a class="registrar">Registrar</a>
