@@ -1,3 +1,17 @@
+
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './components/Login';
+import feed from './components/feed';
+function App() {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Login />} />
+                <Route path="/feed" element={<Feed />} />
+            </Routes>
+        </Router>
+    );
+}
 const express = require('express');
 const app = express();
 
@@ -13,4 +27,4 @@ const postRoutes = require('./routes/postRoutes.js');
 app.use('/users', userRoutes);
 app.use('/posts', postRoutes);
 
-app.listen(3000, () => console.log('Server running on port 3000'));
+app.listen(3000, () => console.log('Server rodando em 3000'));
