@@ -13,7 +13,7 @@ app.use('/posts', postRoutes);
 
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html');
+    res.sendFile(__dirname + 'frontend/public/index.html');
 });
 
 app.get('/feed', (req, res) => {
