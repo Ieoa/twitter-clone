@@ -1,45 +1,45 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// src/pages/Login.jsx
+import { useState } from 'react';
 
-export default function Login() {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const navigate = useNavigate();
+function Login() {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
 
-    async function handleSubmit(e) {
-        e.preventDefault();
-
-        const res = await fetch("http://localhost:3000/users/login", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ username, password }),
+    const handleLogin = async () => {
+        const response = await fetch('http://localhost:3000/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username, password })
         });
 
-        const data = await res.json();
-
-        if (res.ok) {
-            alert(data.message);
-            navigate("/feed");
-
-            alert(data.message);
+        if (response.status === 200) {
+            window.location.href = '/dashboard'; // ou use React Router para navegar
+        } else {
+            alert('Credenciais inválidas');
         }
-    }
+    };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <div>
+            <h2>Login</h2>
             <input
                 type="text"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
                 placeholder="Usuário"
+                value={username}
+                onChange={e => setUsername(e.target.value)}
             />
             <input
                 type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
                 placeholder="Senha"
+                value={password}
+                onChange={e => setPassword(e.target.value)}
             />
-            <button type="submit">Entrar</button>
-        </form>
+            <button onClick={handleLogin}>Entrar</button>
+        </div>
     );
 }
+
+export default Login;
+
