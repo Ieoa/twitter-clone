@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const app = express();
 
@@ -12,9 +13,12 @@ app.use('/users', userRoutes);
 app.use('/posts', postRoutes);
 
 
+const path = require('path');
+
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + 'frontend/public/index.html');
+    res.sendFile(path.resolve(__dirname, '../../frontend/src/index.html'));
 });
+
 
 app.get('/feed', (req, res) => {
     res.sendFile(__dirname + '/public/feed.html');
