@@ -1,35 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+const path = require('path');
+const express = require('express');
+const app = express();
 
-function App() {
-  const [count, setCount] = useState(0)
+app.use(express.json());
+app.use(express.static(__dirname + "/public"));
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+const userRoutes = require('./routes/userRoutes.js');
+const postRoutes = require('./routes/postRoutes.js');
 
-export default App
+
+app.use('/users', userRoutes);
+app.use('/posts', postRoutes);
+
+
+const path = require('path');
+
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../../frontend/src/index.html'));
+});
+
+
+app.get('/feed', (req, res) => {
+  res.sendFile(__dirname + '/public/feed.html');
+});
+
+app.listen(3000, () => console.log('Server rodando em 3000'));
