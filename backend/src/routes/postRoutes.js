@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 router.post('/', (req, res) => {
-    res.send('Post route is working');
+    res.send('rota post funcionando');
 });
 
 module.exports = router;
