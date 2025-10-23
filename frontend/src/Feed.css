@@ -1,0 +1,72 @@
+/* Container do feed */
+.feed {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    font-family: Arial, sans-serif;
+}
+
+/* Cada tweet/post */
+.post {
+    background-color: #fff;
+    border: 1px solid #e1e8ed;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Cabeçalho do post */
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Avatar */
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 0.75rem;
+}
+
+/* Nome e usuário */
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.username {
+    font-weight: bold;
+    color: #14171a;
+}
+
+.handle {
+    color: #657786;
+    font-size: 0.9rem;
+}
+
+/* Conteúdo do post */
+.post-content {
+    color: #14171a;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Ações (curtir, comentar, compartilhar) */
+.post-actions {
+    display: flex;
+    justify-content: space-around;
+    color: #657786;
+    font-size: 0.9rem;
+}
+
+.post-actions span {
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.post-actions span:hover {
+    color: #1da1f2;
+}
