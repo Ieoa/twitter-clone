@@ -12,9 +12,6 @@ const postRoutes = require('./routes/postRoutes.js');
 app.use('/users', userRoutes);
 app.use('/posts', postRoutes);
 
-
-const path = require('path');
-
 app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../../frontend/src/index.html'));
 });
