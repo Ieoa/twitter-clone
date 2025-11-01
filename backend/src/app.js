@@ -1,24 +1,12 @@
-const path = require('path');
+// backend/src/app.js
 const express = require('express');
+const cors = require('cors');
+const userRoutes = require('./routes/userRoutes');
+
 const app = express();
-
+app.use(cors());
 app.use(express.json());
-app.use(express.static(__dirname + "/public"));
 
-const userRoutes = require('./routes/userRoutes.js');
-const postRoutes = require('./routes/postRoutes.js');
+app.use('/api', userRoutes);
 
-
-app.use('/users', userRoutes);
-app.use('/posts', postRoutes);
-
-app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../../frontend/src/index.html'));
-});
-
-
-app.get('/feed', (req, res) => {
-    res.sendFile(__dirname + '/public/feed.html');
-});
-
-app.listen(3000, () => console.log('Server rodando em 3000'));
+module.exports = app;
