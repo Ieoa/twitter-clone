@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/feed" element={<Feed />} /> {/* 👈 novo */}
+        <Route path="/feed" element={<Feed />} />
       </Routes>
     </Router>
   );
