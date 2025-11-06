@@ -1,0 +1,170 @@
+:root {
+    --bg: #0f1419;
+    --card: #15202b;
+    --muted: #8899a6;
+    --accent: #1da1f2;
+    --text: #e6eef3;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Inter, system-ui, Arial, sans-serif
+}
+
+body,
+html,
+#root {
+    height: 100%;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text)
+}
+
+.login-page {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card {
+    background: var(--card);
+    padding: 28px;
+    border-radius: 12px;
+    width: 340px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+.login-card h1 {
+    margin: 0 0 12px
+}
+
+.login-card input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #26323a;
+    background: #0b1114;
+    color: var(--text)
+}
+
+.login-card button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 0;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600
+}
+
+.login-card .error {
+    color: #ff6b6b;
+    margin-top: 8px
+}
+
+.login-card .hint {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 13px
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03)
+}
+
+.topbar h2 {
+    margin: 0
+}
+
+.topbar button {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 6px 10px;
+    border-radius: 8px;
+    color: var(--text)
+}
+
+.feed {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto
+}
+
+.compose {
+    width: 320px;
+    background: var(--card);
+    padding: 16px;
+    border-radius: 12px
+}
+
+.compose .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #1f2933;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px
+}
+
+.compose textarea {
+    width: 100%;
+    margin-top: 8px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #0b1114;
+    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, 0.03)
+}
+
+.tweets {
+    flex: 1
+}
+
+.tweet {
+    display: flex;
+    padding: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03)
+}
+
+.tweet-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #1f2933;
+    display: inline-block;
+    margin-right: 12px
+}
+
+.tweet-body {
+    flex: 1
+}
+
+.tweet-head {
+    color: var(--muted);
+    font-size: 13px;
+    display: flex;
+    gap: 8px;
+    align-items: center
+}
+
+.tweet p {
+    margin: 6px 0 0;
+    font-size: 15px;
+    color: var(--text)
+}
+
+.dot {
+    opacity: 0.6
+}
